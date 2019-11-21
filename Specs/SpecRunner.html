@@ -11,7 +11,6 @@
     <link rel="shortcut icon" type="image/png" href="../ThirdParty/jasmine-2.2.0/jasmine_favicon.png">
     <link rel="stylesheet" href="../ThirdParty/jasmine-2.2.0/jasmine.css">
     <link rel="stylesheet" href="CesiumJasmineHtml.css">
-    <link rel="stylesheet" href="../Source/Widgets/CesiumWidget/CesiumWidget.css">
 
     <script src="../ThirdParty/jasmine-2.2.0/jasmine.js"></script>
     <script src="../ThirdParty/jasmine-2.2.0/jasmine-html.js"></script>
@@ -22,14 +21,17 @@
         if (window.location.search.indexOf('built') !== -1) {
             if (window.location.search.indexOf('release') !== -1) {
                 document.write('<script src="../Build/Cesium/Cesium.js"><\/script>');
+                document.write('<link rel="stylesheet" href="../Build/Cesium/Widgets/CesiumWidget/CesiumWidget.css">');
             } else {
                 document.write('<script src="../Build/CesiumUnminified/Cesium.js"><\/script>');
+                document.write('<link rel="stylesheet" href="../Build/CesiumUnminified/Widgets/CesiumWidget/CesiumWidget.css">');
             }
             document.write('<script src="../Build/Specs/spec-main.js"><\/script>');
             document.write('<script src="../Build/Specs/Specs.js"><\/script>');
         } else {
             window.CESIUM_BASE_URL = '../Source/';
             document.write('<script type="module" src="spec-main.js"><\/script>');
+            document.write('<link rel="stylesheet" href="../Source/Widgets/CesiumWidget/CesiumWidget.css">');
         }
     </script>
     <script>
